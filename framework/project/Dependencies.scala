@@ -148,7 +148,7 @@ object Dependencies {
     specsBuild.map(_ % Test) ++
     javaTestDeps
 
-  val nettyVersion = "4.0.41.Final"
+  val nettyVersion = "4.0.43.Final"
 
   val netty = Seq(
     "com.typesafe.netty" % "netty-reactive-streams-http" % "1.0.8",
@@ -299,7 +299,7 @@ object Dependencies {
     ) ++ specsBuild.map(_ % Test)
 
 
-  val asyncHttpClientVersion = "2.0.24"
+  val asyncHttpClientVersion = "2.0.26"
   val playWsDeps = Seq(
     guava,
     "org.asynchttpclient" % "async-http-client" % asyncHttpClientVersion,
