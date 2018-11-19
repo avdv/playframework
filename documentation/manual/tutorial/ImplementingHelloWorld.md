@@ -22,7 +22,8 @@ With any text editor, create a file named `hello.scala.html` and save it in the 
 This Twirl and HTML markup accomplishes the following:
 
 1. The `@` sign tells the template engine to interpret what follows.
-1. In this case, `@main("Hello")` calls the main template, `main.scala.html` and passes it the page title of `"Hello"`.
+1. First, `@()(implicit assetsFinder: AssetsFinder)` declares the parameters of the template itself.
+1. Second, `@main("Hello", assetsFinder)` calls the main template, `main.scala.html` and passes it the page title of `"Hello"` and the `assetsFinder` as arguments.
 1. The content section contains the `Hello World` greeting. The main template will insert this into the body of the page.
 
 Now we are ready to add an action method that will render the new page.
@@ -55,7 +56,7 @@ When you add a route to the `routes` file, Play's routes compiler will automatic
 
 You are now ready to test the new page. If you stopped the application for some reason, restart it with the `sbt run` command.
 
-Enter the URL <http://localhost:9000> to view the results of your work. The browser should respond with something like the following:
+Enter the URL <http://localhost:9000/hello> to view the results of your work. The browser should respond with something like the following:
 
 [[images/hello-page.png]]
 
